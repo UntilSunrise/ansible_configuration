@@ -1,0 +1,10 @@
+---
+- hosts: db_servers
+  tasks:
+    - name: Install MySQL
+      become: yes
+      apt:
+        name: mysql-server
+        state: present
+      tags:
+        - database
