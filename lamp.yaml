@@ -1,0 +1,9 @@
+---
+- name: Setup LAMP Stack
+  hosts: all
+  tasks:
+    - name: Include web server playbook
+      include_tasks: /home/vagrant/test/webserver.yaml
+
+#    - name: Include database playbook
+#      include: database.yaml
