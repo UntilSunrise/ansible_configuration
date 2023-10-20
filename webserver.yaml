@@ -1,0 +1,17 @@
+---
+- name: Web Server Config
+  hosts: web_servers
+  tasks:
+    - name: Copy script to webserver managed node
+      copy:
+        src: /home/vagrant/test/scripts/web_script.sh
+        dest: /home/vagrant/web_script.sh
+        mode: +x
+
+      tags:
+        - webserver
+
+    - name: Run script
+      shell: /home/vagrant/web_script.sh
+      tags:
+        - webserver
